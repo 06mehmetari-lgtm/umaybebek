@@ -13,7 +13,7 @@
       hospitalMapsQuery: "Hastane Adresi Şehir",
       anneWhatsApp: "905079726261",
       babaWhatsApp: "905065493697",
-      musicUrl: "https://assets.mixkit.co/music/preview/mixkit-lullaby-cradle-song-309.mp3"
+      musicUrl: "muzik.mp3"
     };
   </script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -433,6 +433,10 @@
       var label = document.getElementById('musicLabel');
       var splash = document.getElementById('splash');
       if (audio && c.musicUrl) { audio.src = c.musicUrl; }
+      if (audio) {
+        audio.loop = true;
+        audio.addEventListener('ended', function () { audio.currentTime = 0; audio.play().catch(function () {}); });
+      }
       function updateUI() {
         if (!btn || !label) return;
         var playing = !audio.paused;
