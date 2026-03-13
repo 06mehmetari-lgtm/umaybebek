@@ -61,6 +61,66 @@
       pointer-events: none;
       z-index: 0;
     }
+    .butterflies {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      pointer-events: none;
+      z-index: 0;
+      overflow: hidden;
+    }
+    .butterfly {
+      position: absolute;
+      width: 28px;
+      height: 28px;
+      opacity: 0.5;
+      animation: float 12s ease-in-out infinite;
+    }
+    .butterfly:nth-child(1) { left: 8%; top: 15%; animation-delay: 0s; animation-duration: 14s; }
+    .butterfly:nth-child(2) { left: 85%; top: 25%; animation-delay: -3s; animation-duration: 11s; }
+    .butterfly:nth-child(3) { left: 15%; top: 70%; animation-delay: -5s; animation-duration: 16s; }
+    .butterfly:nth-child(4) { left: 75%; top: 65%; animation-delay: -2s; animation-duration: 13s; }
+    .butterfly:nth-child(5) { left: 50%; top: 10%; animation-delay: -7s; animation-duration: 15s; }
+    .butterfly:nth-child(6) { left: 25%; top: 45%; animation-delay: -4s; animation-duration: 12s; }
+    .butterfly:nth-child(7) { left: 90%; top: 55%; animation-delay: -1s; animation-duration: 10s; }
+    .butterfly:nth-child(8) { left: 5%; top: 35%; animation-delay: -6s; width: 22px; height: 22px; opacity: 0.4; }
+    .butterfly:nth-child(9) { left: 70%; top: 12%; animation-delay: -8s; width: 20px; height: 20px; opacity: 0.35; }
+    @keyframes float {
+      0%, 100% { transform: translate(0, 0) rotate(0deg); }
+      25% { transform: translate(15px, -20px) rotate(5deg); }
+      50% { transform: translate(-10px, 10px) rotate(-5deg); }
+      75% { transform: translate(20px, 15px) rotate(3deg); }
+    }
+    .butterfly svg {
+      width: 100%;
+      height: 100%;
+      filter: drop-shadow(0 2px 4px rgba(0,0,0,0.08));
+    }
+    .baby-clouds {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      pointer-events: none;
+      z-index: 0;
+    }
+    .baby-cloud {
+      position: absolute;
+      font-size: 2.5rem;
+      opacity: 0.12;
+      animation: gentle 8s ease-in-out infinite;
+    }
+    .baby-cloud:nth-child(1) { left: 10%; top: 8%; animation-delay: 0s; }
+    .baby-cloud:nth-child(2) { right: 12%; top: 12%; animation-delay: -2s; }
+    .baby-cloud:nth-child(3) { left: 20%; bottom: 15%; animation-delay: -4s; }
+    .baby-cloud:nth-child(4) { right: 18%; bottom: 20%; animation-delay: -1s; }
+    @keyframes gentle {
+      0%, 100% { transform: translateY(0) scale(1); }
+      50% { transform: translateY(-8px) scale(1.05); }
+    }
     .content {
       position: relative;
       z-index: 1;
@@ -210,6 +270,23 @@
   </style>
 </head>
 <body>
+  <div class="butterflies" aria-hidden="true">
+    <div class="butterfly"><svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M32 8c-4 8-8 16-8 24 0 8 4 16 8 24 4-8 8-16 8-24s-4-16-8-24z" fill="#e8c4c9"/><path d="M32 8c4 8 8 16 8 24 0 8-4 16-8 24-4-8-8-16-8-24s4-16 8-24z" fill="#d4a5ab"/><ellipse cx="32" cy="32" rx="4" ry="20" fill="#c9a962" opacity="0.8"/><path d="M28 20 Q32 28 28 44" stroke="#c9a962" stroke-width="1.5" fill="none"/><path d="M36 20 Q32 28 36 44" stroke="#c9a962" stroke-width="1.5" fill="none"/></svg></div>
+    <div class="butterfly"><svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M32 8c-4 8-8 16-8 24 0 8 4 16 8 24 4-8 8-16 8-24s-4-16-8-24z" fill="#f5e6e8"/><path d="M32 8c4 8 8 16 8 24 0 8-4 16-8 24-4-8-8-16-8-24s4-16 8-24z" fill="#e8c4c9"/><ellipse cx="32" cy="32" rx="4" ry="20" fill="#c9a962" opacity="0.8"/></svg></div>
+    <div class="butterfly"><svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M32 8c-4 8-8 16-8 24 0 8 4 16 8 24 4-8 8-16 8-24s-4-16-8-24z" fill="#e8c4c9"/><path d="M32 8c4 8 8 16 8 24 0 8-4 16-8 24-4-8-8-16-8-24s4-16 8-24z" fill="#d4a5ab"/><ellipse cx="32" cy="32" rx="4" ry="20" fill="#c9a962" opacity="0.8"/></svg></div>
+    <div class="butterfly"><svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M32 8c-4 8-8 16-8 24 0 8 4 16 8 24 4-8 8-16 8-24s-4-16-8-24z" fill="#f5e6e8"/><path d="M32 8c4 8 8 16 8 24 0 8-4 16-8 24-4-8-8-16-8-24s4-16 8-24z" fill="#e8c4c9"/><ellipse cx="32" cy="32" rx="4" ry="20" fill="#c9a962" opacity="0.8"/></svg></div>
+    <div class="butterfly"><svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M32 8c-4 8-8 16-8 24 0 8 4 16 8 24 4-8 8-16 8-24s-4-16-8-24z" fill="#e8c4c9"/><path d="M32 8c4 8 8 16 8 24 0 8-4 16-8 24-4-8-8-16-8-24s4-16 8-24z" fill="#d4a5ab"/><ellipse cx="32" cy="32" rx="4" ry="20" fill="#c9a962" opacity="0.8"/></svg></div>
+    <div class="butterfly"><svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M32 8c-4 8-8 16-8 24 0 8 4 16 8 24 4-8 8-16 8-24s-4-16-8-24z" fill="#f5e6e8"/><path d="M32 8c4 8 8 16 8 24 0 8-4 16-8 24-4-8-8-16-8-24s4-16 8-24z" fill="#e8c4c9"/><ellipse cx="32" cy="32" rx="4" ry="20" fill="#c9a962" opacity="0.8"/></svg></div>
+    <div class="butterfly"><svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M32 8c-4 8-8 16-8 24 0 8 4 16 8 24 4-8 8-16 8-24s-4-16-8-24z" fill="#e8c4c9"/><path d="M32 8c4 8 8 16 8 24 0 8-4 16-8 24-4-8-8-16-8-24s4-16 8-24z" fill="#d4a5ab"/><ellipse cx="32" cy="32" rx="4" ry="20" fill="#c9a962" opacity="0.8"/></svg></div>
+    <div class="butterfly"><svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M32 8c-4 8-8 16-8 24 0 8 4 16 8 24 4-8 8-16 8-24s-4-16-8-24z" fill="#e8c4c9"/><path d="M32 8c4 8 8 16 8 24 0 8-4 16-8 24-4-8-8-16-8-24s4-16 8-24z" fill="#d4a5ab"/><ellipse cx="32" cy="32" rx="4" ry="20" fill="#c9a962" opacity="0.8"/></svg></div>
+    <div class="butterfly"><svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M32 8c-4 8-8 16-8 24 0 8 4 16 8 24 4-8 8-16 8-24s-4-16-8-24z" fill="#f5e6e8"/><path d="M32 8c4 8 8 16 8 24 0 8-4 16-8 24-4-8-8-16-8-24s4-16 8-24z" fill="#e8c4c9"/><ellipse cx="32" cy="32" rx="4" ry="20" fill="#c9a962" opacity="0.8"/></svg></div>
+  </div>
+  <div class="baby-clouds" aria-hidden="true">
+    <span class="baby-cloud">👶</span>
+    <span class="baby-cloud">🍼</span>
+    <span class="baby-cloud">⭐</span>
+    <span class="baby-cloud">👶</span>
+  </div>
   <div class="page">
     <div class="content">
       <p class="badge">Dünyaya hoş geldin</p>
@@ -260,17 +337,15 @@
           <span class="icon-play"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span>
           <span class="icon-pause"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg></span>
         </button>
-        <span id="musicLabel">Bebek ninnisi</span>
+        <span id="musicLabel">Bebek ninnisi (YouTube)</span>
       </div>
+      <div id="ytContainer" style="position:fixed;bottom:0;left:0;width:1px;height:1px;overflow:hidden;opacity:0;pointer-events:none;z-index:1;"></div>
 
       <footer>Uslu ailesi · Umay</footer>
     </div>
   </div>
 
-  <audio id="lullaby" loop preload="auto">
-    <source src="https://assets.mixkit.co/music/preview/mixkit-lullaby-cradle-song-309.mp3" type="audio/mpeg" />
-  </audio>
-
+  <script src="https://www.youtube.com/iframe_api"></script>
   <script>
     (function () {
       var c = window.INVITATION || {};
@@ -283,30 +358,90 @@
       if (anneLink && c.anneWhatsApp) anneLink.href = 'https://wa.me/' + c.anneWhatsApp.replace(/\D/g, '');
       if (babaLink && c.babaWhatsApp) babaLink.href = 'https://wa.me/' + c.babaWhatsApp.replace(/\D/g, '');
     })();
+
+    var ytPlayer = null;
+    var ytReady = false;
+    var YT_VIDEO_ID = 'M-he70PcfR4';
+
+    function onYouTubeIframeAPIReady() {
+      ytReady = true;
+    }
+
+    function initYTPlayer() {
+      if (ytPlayer) return;
+      var container = document.getElementById('ytContainer');
+      if (!container) return;
+      ytPlayer = new YT.Player('ytContainer', {
+        videoId: YT_VIDEO_ID,
+        width: 1,
+        height: 1,
+        playerVars: {
+          autoplay: 1,
+          loop: 1,
+          playlist: YT_VIDEO_ID,
+          playsinline: 1,
+          modestbranding: 1,
+          rel: 0
+        },
+        events: {
+          onReady: function () {
+            var btn = document.getElementById('musicBtn');
+            var label = document.getElementById('musicLabel');
+            if (btn) { btn.classList.add('paused'); btn.classList.remove('playing'); }
+            if (label) label.textContent = 'Bebek ninnisi (YouTube)';
+          }
+        }
+      });
+    }
+
     (function () {
-      var audio = document.getElementById('lullaby');
       var btn = document.getElementById('musicBtn');
       var label = document.getElementById('musicLabel');
-      if (!audio || !btn) return;
+      if (!btn) return;
 
-      function updateBtn() {
-        btn.classList.toggle('paused', audio.paused);
-        btn.classList.toggle('playing', !audio.paused);
-        label.textContent = audio.paused ? 'Bebek ninnisi' : 'Çalıyor';
+      function setPlaying(playing) {
+        btn.classList.toggle('paused', !playing);
+        btn.classList.toggle('playing', playing);
+        label.textContent = playing ? 'Çalıyor' : 'Bebek ninnisi (YouTube)';
       }
 
       btn.addEventListener('click', function () {
-        if (audio.paused) {
-          audio.play().catch(function () {});
-        } else {
-          audio.pause();
+        if (!ytReady && typeof window.YT === 'undefined') {
+          label.textContent = 'Yükleniyor…';
+          var check = setInterval(function () {
+            if (window.YT && window.YT.Player) {
+              clearInterval(check);
+              ytReady = true;
+              btn.click();
+            }
+          }, 200);
+          return;
         }
-        updateBtn();
+        if (!ytPlayer) {
+          initYTPlayer();
+          setTimeout(function () {
+            if (ytPlayer && ytPlayer.playVideo) {
+              ytPlayer.playVideo();
+              setPlaying(true);
+            }
+          }, 600);
+          return;
+        }
+        try {
+          var state = ytPlayer.getPlayerState();
+          if (state === 1) {
+            ytPlayer.pauseVideo();
+            setPlaying(false);
+          } else {
+            ytPlayer.playVideo();
+            setPlaying(true);
+          }
+        } catch (e) {
+          ytPlayer.playVideo();
+          setPlaying(true);
+        }
       });
-
-      audio.addEventListener('play', updateBtn);
-      audio.addEventListener('pause', updateBtn);
-      updateBtn();
+      setPlaying(false);
     })();
   </script>
 </body>
