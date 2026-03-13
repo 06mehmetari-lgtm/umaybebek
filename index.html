@@ -12,7 +12,8 @@
     window.INVITATION = {
       hospitalMapsQuery: "Hastane Adresi Şehir",
       anneWhatsApp: "905079726261",
-      babaWhatsApp: "905065493697"
+      babaWhatsApp: "905065493697",
+      musicUrl: "https://assets.mixkit.co/music/preview/mixkit-lullaby-cradle-song-309.mp3"
     };
   </script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -416,7 +417,7 @@
     </div>
   </div>
 
-  <audio id="lullaby" loop preload="auto" autoplay src="muzik.mp3"></audio>
+  <audio id="lullaby" loop preload="auto" autoplay></audio>
 
   <script>
     (function () {
@@ -426,10 +427,12 @@
         mapsLink.href = 'https://www.google.com/maps/search/?api=1&query=' + encodeURIComponent(c.hospitalMapsQuery);
     })();
     (function () {
+      var c = window.INVITATION || {};
       var audio = document.getElementById('lullaby');
       var btn = document.getElementById('musicBtn');
       var label = document.getElementById('musicLabel');
       var splash = document.getElementById('splash');
+      if (audio && c.musicUrl) { audio.src = c.musicUrl; }
       function updateUI() {
         if (!btn || !label) return;
         var playing = !audio.paused;
